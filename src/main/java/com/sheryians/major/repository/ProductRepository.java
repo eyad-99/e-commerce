@@ -1,0 +1,16 @@
+package com.sheryians.major.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sheryians.major.model.Category;
+import com.sheryians.major.model.Product;
+
+public interface ProductRepository   extends JpaRepository<Product,	Long> 
+{
+	List<Product> findAllByCategory_IdAndDeleted(int id,int deleted);
+	List<Product> findByDeleted(int deleted);
+
+
+}
